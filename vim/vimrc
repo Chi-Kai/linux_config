@@ -1,0 +1,24 @@
+
+call plug#begin ('~/.vim/plugged')
+
+ Plug 'neoclide/coc.nvim', {'branch': 'release'}
+ Plug 'preservim/nerdtree'
+ Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+ Plug 'jiangmiao/auto-pairs'
+ Plug 'vim-airline/vim-airline'
+ Plug 'vim-airline/vim-airline-themes'
+ Plug 'dracula/vim', { 'as': 'dracula' }
+ Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+
+call plug#end()
+
+"主题 " 
+colorscheme dracula 
+hi Normal ctermfg=252 ctermbg=none
+
+"用jk替换"
+inoremap C^k <esc>
+
+"关闭c语系换行"
+set nocindent
+set nosmartindent

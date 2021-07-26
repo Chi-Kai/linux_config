@@ -1,0 +1,7 @@
+baidunetdisk-bin
+dwarffortress-phoebus
+linux-latest
+linux-latest-headers
+ttf-wps-fonts
+wps-office-cn
+wtfutil
