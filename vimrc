@@ -5,18 +5,19 @@ call plug#begin ('~/.vim/plugged')
  Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
  Plug 'jiangmiao/auto-pairs'
  Plug 'vim-airline/vim-airline'
- Plug 'vim-airline/vim-airline-themes'
  Plug 'dracula/vim', { 'as': 'dracula' }
- Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
  Plug 'junegunn/vim-easy-align'
  Plug 'jistr/vim-nerdtree-tabs'
  Plug 'ervandew/superTab'
  Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
  Plug 'junegunn/vim-peekaboo'
  Plug 'easymotion/vim-easymotion'
- Plug 'universal-ctags/ctags'
  Plug 'skywind3000/asyncrun.vim'
-
+ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+ Plug 'rust-lang/rust.vim'
+ Plug 'mhinz/vim-startify'
+ Plug 'morhetz/gruvbox',{'do':':autocmd vimenter * ++nested colorscheme gruvbox'}
+ Plug 'tpope/vim-fugitive' "git 插件
 call plug#end()
 
 " 默认加载termdebug插件
@@ -72,9 +73,11 @@ nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
 
 
 
-"主题 " 
-colorscheme dracula 
-hi Normal ctermfg=252 ctermbg=none
+"主题 有透明 " 
+"colorscheme dracula 
+"hi Normal ctermfg=252 ctermbg=none
+set background=dark
+
 
 "用jj替换"
 inoremap jj <Esc> 

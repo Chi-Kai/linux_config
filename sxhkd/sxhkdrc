@@ -4,10 +4,10 @@
 
 # terminal emulator
 super + Return
-        alacritty
+        alacritty       
 # program launcher
 super + d
-	rofi -show drun -theme Arc-dark
+	rofi -show drun
 
 # make sxhkd reload its configuration files:
 super + Escape

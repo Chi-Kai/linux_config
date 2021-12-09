@@ -1,13 +1,11 @@
 #! /bin/sh
-
+sxhkd &
 nm-applet &
 picom &
 fcitx5 &
-bash ~/.config/bspwm/polybar/launch.sh --shapes &
-bash /home/chikai/Pictures/wall.sh &
-
-
-
+bash ~/.config/polybar/launch.sh --shapes &
+bash ~/Pictures/styli.sh/styli.sh &
+xrandr --output HDMI-1 --mode 1920x1080 --same-as eDP-1 --auto
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d I II III IV V VI
