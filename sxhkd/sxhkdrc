@@ -7,20 +7,21 @@ super + Return
         alacritty       
 # program launcher
 super + d
-	rofi -show drun
-
+        /home/chikai/.config/rofi/launchers/colorful/launcher.sh &
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 
-#
-# bspwm hotkeys
-#
+# lockscreen
+alt + shift + l
+    betterlockscreen -l dim
 
 # quit/restart bspwm
-super + shift + {e,r}
-	bspc {quit,wm -r}
-
+super + shift + r
+	bspc wm -r
+# powermenu
+super + shift + e
+  /home/chikai/.config/rofi/powermenu/powermenu.sh &
 # close and kill
 super + shift + q
 	bspc node -{c,k}
@@ -54,7 +55,7 @@ super + ctrl + {m,x,y,z}
 #
 
 # focus the node in the given direction
-super + {Left,Down,Up,Right}
+super + {h,j,k,l}
         bspc node -f {west,south,north,east}
 
 # focus the node for the given path jump
@@ -62,9 +63,11 @@ super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
-super + {_,shift + }c
+super + c
 	bspc node -f {next,prev}.local.!hidden.window
-
+# screenshot
+super + shift + c
+  /home/chikai/.config/rofi/applets/android/screenshot.sh &
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local

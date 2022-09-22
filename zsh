@@ -6,13 +6,20 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH="/home/chikai/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+export PATH=$HOME/.config/rofi/bin:$PATH
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 plugins=(
-		git
 		zsh-autosuggestions
 		zsh-syntax-highlighting
-		archlinux					        
+		archlinux					   
+                vi-mode
+                zsh-z
 	)
+
+# vi-mode set
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+VI_MODE_SET_CURSOR=true
 
 source $ZSH/oh-my-zsh.sh
 function proxy_on() {
@@ -26,5 +33,10 @@ function proxy_off(){
     echo -e "终端代理已关闭。"
 }
 
+alias vim=nvim
+#alias vim=lvim
+alias cl=clear
+export CHROME_EXECUTABLE=/bin/google-chrome-stable
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
